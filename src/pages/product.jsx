@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import products from "../assets/products"
 import { useDispatch } from "react-redux";
@@ -9,13 +9,14 @@ import SearchBar from "../components/SearchBar";
 const Product = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
 
     const product = products.find((product) => product.id === parseInt(id));
     const [selectedImage, setSelectedImage] = useState(product.imageUrl[0])
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
+        navigate("/cart");
     };
 
     if (!product) {

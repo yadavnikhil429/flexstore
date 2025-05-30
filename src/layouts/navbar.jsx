@@ -11,7 +11,6 @@ const NavBar = ()=> {
             <NavLink to="/" className="text-gray-700 hover:text-[var(--color-accent)]">  Home |</NavLink> 
             <NavLink to="/cart" className="text-gray-700 hover:text-[var(--color-accent)]"> Cart</NavLink>
             </div>
-            
         </div>
         </nav>
     )
